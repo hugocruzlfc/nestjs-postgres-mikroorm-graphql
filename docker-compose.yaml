@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres_mikroorm_nestjs:
+    image: postgres:latest
+    container_name: api_postgres_mikroorm_nestjs
+    environment:
+      POSTGRES_DB: nestjs-mikroorm-graphql
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_mikroorm_nestjs_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_mikroorm_nestjs_data:
